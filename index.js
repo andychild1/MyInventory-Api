@@ -13,8 +13,7 @@ const router = express.Router();
 */
 
 const checkAdmin = (req, res, next) => {
-    if (req.query.name !== 'andychild') {
-        console.log(req.query)
+    if (req.query.name !== process.env.PASS_VAR) {
         return res.send('Unauthorized');
     }
     next();
